@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom'
 import './index.css'
 import Home from './pages/Home'
 import Products from './pages/Products'
@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => (
   <nav className="container" style={{ padding: '1.5rem var(--spacing-sm)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
     <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
-      <img src="/logo.png" alt="FYSCO" style={{ height: '60px', objectFit: 'contain' }} />
+      <img src="/fyscoweb/logo.png" alt="FYSCO" style={{ height: '60px', objectFit: 'contain' }} />
     </Link>
 
     <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>

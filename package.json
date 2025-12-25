@@ -2,7 +2,7 @@
   "name": "fyscoweb",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://yourusername.github.io/fyscoweb",
+  "homepage": "https://yeyazar.github.io/fyscoweb",
   "type": "module",
   "scripts": {
     "dev": "vite",

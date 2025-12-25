@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Products = () => {
-    const [mainImage, setMainImage] = React.useState('/product.png');
+    const [mainImage, setMainImage] = React.useState('/fyscoweb/product.png');
 
     return (
         <div className="container" style={{ padding: 'var(--spacing-lg) var(--spacing-sm)', minHeight: '60vh' }}>
@@ -15,24 +15,24 @@ const Products = () => {
                         <img src={mainImage} alt="FYSCOGO Thermos" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '16px', dropShadow: '0 20px 40px rgba(0,0,0,0.5)', transition: 'opacity 0.3s' }} />
                         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem', justifyContent: 'center' }}>
                             <img
-                                src="/product.png"
+                                src="/fyscoweb/product.png"
                                 alt="Main view"
-                                onClick={() => setMainImage('/product.png')}
-                                style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '4px', cursor: 'pointer', border: mainImage === '/product.png' ? '2px solid var(--color-accent-primary)' : '1px solid rgba(255,255,255,0.2)' }}
+                                onClick={() => setMainImage('/fyscoweb/product.png')}
+                                style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '4px', cursor: 'pointer', border: mainImage === '/fyscoweb/product.png' ? '2px solid var(--color-accent-primary)' : '1px solid rgba(255,255,255,0.2)' }}
                             />
                             {[1, 2, 3, 4, 5].map((num) => (
                                 <img
                                     key={num}
-                                    src={`/product-detail-${num}.jpg`}
+                                    src={`/fyscoweb/product-detail-${num}.jpg`}
                                     alt={`Detail ${num}`}
-                                    onClick={() => setMainImage(`/product-detail-${num}.jpg`)}
+                                    onClick={() => setMainImage(`/fyscoweb/product-detail-${num}.jpg`)}
                                     style={{
                                         width: '40px',
                                         height: '40px',
                                         objectFit: 'cover',
                                         borderRadius: '4px',
                                         cursor: 'pointer',
-                                        border: mainImage === `/product-detail-${num}.jpg` ? '2px solid var(--color-accent-primary)' : '1px solid rgba(255,255,255,0.2)'
+                                        border: mainImage === `/fyscoweb/product-detail-${num}.jpg` ? '2px solid var(--color-accent-primary)' : '1px solid rgba(255,255,255,0.2)'
                                     }}
                                 />
                             ))}
