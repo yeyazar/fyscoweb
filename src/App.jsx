@@ -7,7 +7,6 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import AmazonCTA from './components/AmazonCTA'
 
-import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <nav className="container" style={{ padding: '1.5rem var(--spacing-sm)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
@@ -40,7 +39,7 @@ function App() {
           </Routes>
         </main>
         <footer style={{ textAlign: 'center', padding: 'var(--spacing-lg)', color: 'var(--color-text-muted)', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <img src="/logo.png" alt="FYSCO" style={{ height: '80px', opacity: 0.8 }} />
+          <img src="/fyscoweb/logo.png" alt="FYSCO" style={{ height: '80px', opacity: 0.8 }} />
           <p>&copy; {new Date().getFullYear()} FYSCO. All rights reserved.</p>
         </footer>
       </div>
