@@ -2,7 +2,15 @@ import React from 'react';
 import AmazonCTA from './AmazonCTA';
 
 const Hero = () => {
-    const [mainImage, setMainImage] = React.useState('/fyscoweb/product.png');
+    const [mainImage, setMainImage] = React.useState(`${import.meta.env.BASE_URL}product.png`);
+
+    const scrollToFeatures = (e) => {
+        e.preventDefault();
+        const element = document.getElementById('features');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <section className="container" style={{
@@ -38,24 +46,24 @@ const Hero = () => {
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem', justifyContent: 'center' }}>
                     {/* Add original image as option 0 */}
                     <img
-                        src="/fyscoweb/product.png"
+                        src={`${import.meta.env.BASE_URL}product.png`}
                         alt="Main view"
-                        onClick={() => setMainImage('/fyscoweb/product.png')}
-                        style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '8px', cursor: 'pointer', border: mainImage === '/fyscoweb/product.png' ? '2px solid var(--color-accent-primary)' : '1px solid rgba(255,255,255,0.2)', transition: 'transform 0.2s' }}
+                        onClick={() => setMainImage(`${import.meta.env.BASE_URL}product.png`)}
+                        style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '8px', cursor: 'pointer', border: mainImage === `${import.meta.env.BASE_URL}product.png` ? '2px solid var(--color-accent-primary)' : '1px solid rgba(255,255,255,0.2)', transition: 'transform 0.2s' }}
                     />
                     {[1, 2, 3, 4, 5].map((num) => (
                         <img
                             key={num}
-                            src={`/fyscoweb/product-detail-${num}.jpg`}
+                            src={`${import.meta.env.BASE_URL}product-detail-${num}.jpg`}
                             alt={`Detail ${num}`}
-                            onClick={() => setMainImage(`/fyscoweb/product-detail-${num}.jpg`)}
+                            onClick={() => setMainImage(`${import.meta.env.BASE_URL}product-detail-${num}.jpg`)}
                             style={{
                                 width: '50px',
                                 height: '50px',
                                 objectFit: 'cover',
                                 borderRadius: '8px',
                                 cursor: 'pointer',
-                                border: mainImage === `/fyscoweb/product-detail-${num}.jpg` ? '2px solid var(--color-accent-primary)' : '1px solid rgba(255,255,255,0.2)',
+                                border: mainImage === `${import.meta.env.BASE_URL}product-detail-${num}.jpg` ? '2px solid var(--color-accent-primary)' : '1px solid rgba(255,255,255,0.2)',
                                 transition: 'transform 0.2s'
                             }}
                         />
@@ -65,7 +73,7 @@ const Hero = () => {
 
             <h1 style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', marginBottom: '1rem', lineHeight: '1' }}>
                 <span style={{ display: 'block', fontSize: '0.4em', letterSpacing: '0.2em', opacity: 0.8, marginBottom: '0.5rem' }}>THE NEW STANDARD</span>
-                <img src="/fyscoweb/logo.png" alt="FYSCOGO" style={{ height: '1.5em', marginTop: '0.2em', display: 'block', margin: '0 auto' }} />
+                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="FYSCOGO" style={{ height: '1.5em', marginTop: '0.2em', display: 'block', margin: '0 auto' }} />
             </h1>
 
             <p style={{ fontSize: '1.25rem', color: 'var(--color-text-muted)', marginBottom: '2rem', maxWidth: '600px', lineHeight: '1.6' }}>
@@ -75,7 +83,7 @@ const Hero = () => {
 
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <AmazonCTA />
-                <a href="#features" className="glass-panel" style={{
+                <a href="#features" onClick={scrollToFeatures} className="glass-panel" style={{
                     padding: '12px 32px',
                     borderRadius: '50px',
                     color: 'white',
